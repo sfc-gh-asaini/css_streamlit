@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit.components.v1 import html
 from common import HTML_Template, MainCSS
-from streamlit_monaco import st_monaco
 
 st.header("Welcome!")
 st.html(HTML_Template.base_style.substitute(css=MainCSS.initial_page_styles))
@@ -15,14 +14,14 @@ st.write(
 st.subheader("Features")
 st.markdown(
     """
-:blue[$~~~~$:material/new_releases:] $~~$ CSS Selectors \n
-:blue[$~~~~$:material/new_releases:] $~~$ Custom Tips and Tricks \n
-:blue[$~~~~$:material/new_releases:] $~~$ Try your own styles \n
-:blue[$~~~~$:material/new_releases:] $~~$ Copy to clipboard  \n
+:blue[$~~~~$🆕] $~~$ CSS Selectors \n
+:blue[$~~~~$🆕] $~~$ Custom Tips and Tricks \n
+:blue[$~~~~$🆕] $~~$ Try your own styles \n
+:blue[$~~~~$🆕] $~~$ Copy to clipboard  \n
 """
 )
 st.info(
-    ":streamlit: $~~$ This application CSS style requires **Streamlit 1.39** or greater."
+    "🎈$~~$ This application CSS style requires **Streamlit 1.39** or greater."
 )
 
 st.subheader("Basic Structure")

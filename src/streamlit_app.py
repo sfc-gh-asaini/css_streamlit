@@ -8,38 +8,38 @@ nav_menu = {
         st.Page(
             title="Welcome",
             page="home/home.py",
-            icon=":material/home:",
+            icon="🏠",
         )
     ],
     "Widgets": [
         st.Page(
             title="Buttons",
             page="widgets/buttons.py",
-            icon=":material/buttons_alt:",
+            icon="🔘",
         ),
         st.Page(
             title="Headers",
             page="widgets/headers.py",
-            icon=":material/title:",
+            icon="📃",
         ),
         st.Page(
             title="Sliders",
             page="widgets/sliders.py",
-            icon=":material/sliders:",
+            icon="🎚️",
         ),
     ],
     "Layouts": [
         st.Page(
             title="Containers",
             page="layouts/containers.py",
-            icon=":material/tab_group:",
+            icon="🫙",
         ),
-        st.Page(title="Dialogs", page="layouts/dialogs.py", icon=":material/dialogs:"),
-        st.Page(title="Tabs", page="layouts/tabs.py", icon=":material/folder:"),
+        st.Page(title="Dialogs", page="layouts/dialogs.py", icon="💬"),
+        st.Page(title="Tabs", page="layouts/tabs.py", icon="📁"),
         st.Page(
             title="Expanders",
             page="layouts/expanders.py",
-            icon=":material/open_in_full:",
+            icon="🗃️",
         ),
     ],
 }

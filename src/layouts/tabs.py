@@ -1,6 +1,5 @@
 import streamlit as st
 from textwrap import dedent
-from streamlit_monaco import st_monaco
 from common import HTML_Template, CopyToClipboard, MainCSS, CodeExportParse
 
 
@@ -23,7 +22,7 @@ st.write(
 )
 
 st.subheader("Try it!")
-code, preview = st.columns(2, border=True, vertical_alignment="top")
+code, preview = st.columns(2, vertical_alignment="top")
 
 
 with code:
@@ -70,13 +69,8 @@ with code:
 }
            """
     ).strip()
-    styles = st_monaco(
-        value=tabs_css,
-        height="400px",
-        language="css",
-        lineNumbers=True,
-        minimap=False,
-    )
+    styles = tabs_css
+    st.code(tabs_css)
 
 
 def tabs_code():
@@ -96,5 +90,3 @@ with preview:
         st.html(HTML_Template.base_style.substitute(css=styles))
     tabs_code()
     st.code(st_code)
-
-CopyToClipboard(css_text=styles, streamlit_code=st_code)

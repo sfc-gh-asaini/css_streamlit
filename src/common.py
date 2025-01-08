@@ -1,7 +1,6 @@
 from string import Template
 from textwrap import dedent
 import streamlit as st
-import pyperclip
 import inspect
 
 

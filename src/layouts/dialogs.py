@@ -1,6 +1,5 @@
 import streamlit as st
 from textwrap import dedent
-from streamlit_monaco import st_monaco
 from common import HTML_Template, CopyToClipboard, MainCSS, CodeExportParse
 
 st.header("Dialogs")
@@ -12,7 +11,7 @@ st.write(
 )
 
 st.subheader("Try it!")
-code, preview = st.columns(2, border=True, vertical_alignment="top")
+code, preview = st.columns(2, vertical_alignment="top")
 
 
 with code:
@@ -29,13 +28,8 @@ div[role="dialog"]:has(.st-key-medium){
 }
            """
     )
-    styles = st_monaco(
-        value=dialog_css.strip(),
-        height="400px",
-        language="css",
-        lineNumbers=True,
-        minimap=False,
-    )
+    styles = dialog_css
+    st.code(dialog_css)
 
 
 def dialogs_code():
@@ -60,5 +54,3 @@ st_code = str(CodeExportParse(fn=dialogs_code).parse_text)
 with preview:
     dialogs_code()
     st.code(st_code)
-
-CopyToClipboard(css_text=styles, streamlit_code=st_code)

@@ -1,6 +1,5 @@
 import streamlit as st
 from textwrap import dedent
-from streamlit_monaco import st_monaco
 from common import HTML_Template, CopyToClipboard, MainCSS, CodeExportParse
 
 st.header("Buttons")
@@ -16,7 +15,7 @@ The basic structure of a button will also depend on the precense of an `icon` ar
 )
 
 st.subheader("Try it!")
-code, preview = st.columns(2, border=True, vertical_alignment="top")
+code, preview = st.columns(2, vertical_alignment="top")
 
 
 with code:
@@ -51,20 +50,21 @@ with code:
            """
     ).strip()
 
-    styles = st_monaco(
-        value=button_css,
-        height="400px",
-        language="css",
-        lineNumbers=True,
-        minimap=False,
-    )
-
+    # styles = st_monaco(
+    #     value=button_css,
+    #     height="400px",
+    #     language="css",
+    #     lineNumbers=True,
+    #     minimap=False,
+    # )
+    styles = button_css
+    st.code(button_css)
 
 def button_st_code():
     st.button(
         "Sample Button",
         key="styled_button",
-        icon=":material/home:",
+        icon="🏠",
     )
 
 
@@ -77,5 +77,3 @@ with preview:
         st.html(HTML_Template.base_style.substitute(css=styles))
     button_st_code()
     st.code(st_code)
-
-CopyToClipboard(css_text=styles, streamlit_code=st_code)
